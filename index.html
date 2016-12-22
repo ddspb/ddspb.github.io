@@ -18,6 +18,63 @@ layout: default
     {% endfor %}
   </ul>
 
+  <br>
+  <input id="detail" value="Отправка 'Просмотр товара'" type="button" class="btn">
+  <input id="add" value="Отправка 'Добавление в корзину'" type="button" class="btn">
+  <input id="remove" value="Отправка 'Удаления из корзины'" type="button" class="btn">
+  <input id="purchase" value="Отправка 'Покупка'" type="button" class="btn">
+</div>
+<script>
+    document.getElementById("detail").onclick = function () {
+        yaCounter38964290.ecommerceDetail({
+            id: '0005',
+            goods: [
+                {id: 'ug_0005', name: 'box of something (detail)', SKU: 'AB123', category: 'some category/some sub category', price: 1.5},
+                {id: 'ug_0006', name: 'box of something other (detail)', SKU: 'AB124', category: 'some category/some sub category', price: 2.5}
+            ]
+        });
+    };
+
+    document.getElementById("add").onclick = function () {
+        yaCounter38964290.ecommerceAdd({
+            id: '1002',
+            currency: 'RUR',
+            exchange_rate: 2,
+            goods: [
+                {id: 'ug_0010', name: 'box of something (add)', SKU: 'AB123', category: 'some category/some sub category', price: 1.5, brand: "The Box", variant: "gray", quantity: 2},
+                {id: 'ug_0011', name: 'box of something other (add)', SKU: 'AB124', category: 'some category/some sub category', price: 2.5, brand: "The Box", variant: "gray", quantity: 3}
+            ]
+        });
+    };
+
+    document.getElementById("remove").onclick = function () {
+        yaCounter38964290.ecommerceRemove({
+            id: '2002',
+            currency: 'RUR',
+            exchange_rate: 2,
+            goods: [
+                {id: 'ug_0021', name: 'box of something (remove)', SKU: 'AB123', category: 'some category/some sub category', price: 1.5, brand: "The Box", variant: "gray"},
+                {id: 'ug_0022', name: 'box of something other (remove)', SKU: 'AB124', category: 'some category/some sub category', price: 2.5, brand: "The Box", variant: "gray"}
+            ]
+        });
+    };
+
+    document.getElementById("purchase").onclick = function () {
+        yaCounter38964290.ecommercePurchase({
+            id: '3002',
+            affiliation: 'Supplier 1',
+            revenue: 7,
+            shipping: 7,
+            tax: 3,
+            currency: 'CAD',
+            goods: [
+                {id: 'ug_0026', name: 'box of something (purchase)', SKU: 'AB123', category: 'some category/some sub category', price: 1.5, brand: "The Box", variant: "gray", quantity: 2},
+                {id: 'ug_0027', name: 'box of something other (purchase)', SKU: 'AB124', category: 'some category/some sub category', price: 2.5, brand: "The Box", variant: "gray", quantity: 3, coupon: 'GOODS_COUPON'}
+            ]
+        });
+    };
+</script>
+
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
