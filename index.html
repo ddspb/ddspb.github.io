@@ -80,40 +80,90 @@ layout: default
 </div>
 
 
-<div class="form-wrap register">
-  <div class="profile"><img src="https://html5book.ru/wp-content/uploads/2016/10/profile-image.png">
-    <h1>Регистрация</h1>
+<div class="home">
+  <h1>Первая форма</h1>
+  <div class="form-wrap register">
+    <div class="profile"><img src="https://html5book.ru/wp-content/uploads/2016/10/profile-image.png">
+      <h1>Регистрация</h1>
+    </div>
+    <form method="post" action="#">
+      <div>
+        <label for="name">Имя</label>
+        <input type="text" name="name" id="name" class="first-name" required>
+      </div>
+      <div class="radio">
+        <span>Пол</span>
+        <label>
+          <input type="radio" name="sex" value="мужской">мужской
+          <div class="radio-control male"></div>
+        </label>
+        <label>
+          <input type="radio" name="sex" value="женский">женский
+          <div class="radio-control female"></div>
+        </label>
+      </div>
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div>
+        <label for="country">Страна</label>
+        <select name="country" id="country">
+          <option>Выберите страну проживания</option>
+          <option value="Россия">Россия</option>
+          <option value="Украина">Украина</option>
+          <option value="Беларусь">Беларусь</option>
+        </select>
+        <div class="select-arrow"></div>
+      </div>
+      <button type="submit">Отправить</button>
+    </form>
   </div>
-  <form method="post" action="form.php">
-    <div>
-      <label for="name">Имя</label>
-      <input type="text" name="name" id="name" required>
+
+  <h1>Вторая форма</h1>
+  <div class="form-wrap register">
+    <div class="profile"><img src="https://html5book.ru/wp-content/uploads/2016/10/profile-image.png">
+      <h1>Регистрация</h1>
     </div>
-    <div class="radio">
-      <span>Пол</span>
-      <label>
-        <input type="radio" name="sex" value="мужской">мужской
-        <div class="radio-control male"></div>
-      </label>
-      <label>
-        <input type="radio" name="sex" value="женский">женский
-        <div class="radio-control female"></div>
-      </label>
-    </div>
-    <div>
-      <label for="email">E-mail</label>
-      <input type="email" name="email" id="email" required>
-    </div>
-    <div>
-      <label for="country">Страна</label>
-      <select name="country" id="country">
-        <option>Выберите страну проживания</option>
-        <option value="Россия">Россия</option>
-        <option value="Украина">Украина</option>
-        <option value="Беларусь">Беларусь</option>
-      </select>
-      <div class="select-arrow"></div>
-    </div>
-    <button type="submit">Отправить</button>
-  </form>
+    <form method="post" action="#">
+      <div>
+        <label for="first-name">Имя</label>
+        <input type="text" name="first-name" id="first-name" required>
+      </div>
+      <div>
+        <label for="card-number">Имя</label>
+        <input type="text" name="card-number" id="card-number" required>
+      </div>
+      <div>
+        <label for="password">Имя</label>
+        <input type="text" name="name" id="password" required>
+      </div>
+      <div class="radio">
+        <span>Пол</span>
+        <label>
+          <input type="radio" name="sex" value="мужской">мужской
+          <div class="radio-control male"></div>
+        </label>
+        <label>
+          <input type="radio" name="sex" value="женский">женский
+          <div class="radio-control female"></div>
+        </label>
+      </div>
+      <div>
+        <label for="user-email">E-mail</label>
+        <input type="email" name="email" id="user-email" required>
+      </div>
+      <div>
+        <label for="user-country">Страна</label>
+        <select name="country" id="user-country">
+          <option>Выберите страну проживания</option>
+          <option value="Россия">Россия</option>
+          <option value="Украина">Украина</option>
+          <option value="Беларусь">Беларусь</option>
+        </select>
+        <div class="select-arrow"></div>
+      </div>
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
 </div>
