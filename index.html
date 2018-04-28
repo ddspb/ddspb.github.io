@@ -69,7 +69,76 @@ layout: default
           </select>
           <div class="select-arrow"></div>
         </div>
+        <div>
+          <fieldset>
+            <legend>Display</legend>
+            <p><label><input type=radio name=c value=0 checked> Black on White</label>
+            <p><label><input type=radio name=c value=1> White on Black</label>
+            <p><label><input type=checkbox name=g> Use grayscale</label>
+            <p><label>Enhance contrast <input type=range name=e list=contrast min=0 max=100 value=0 step=1></label>
+              <datalist id=contrast>
+                <option label=Normal value=0>
+                <option label=Maximum value=100>
+              </datalist>
+          </fieldset>
+        </div>
+
         <button type="submit">Отправить</button>
+      </form>
+    </div>
+
+    <div class="ym-hide-content">
+      <h2 class="ym-show-content">Еще одна скрытая форма</h2>
+      <form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+        <input name=a type=number step=any> +
+        <input name=b type=number step=any> =
+        <output name=o for="a b"></output>
+      </form>
+    </div>
+
+    <div class="ym-hide-content">
+      <h2 class="ym-show-content">figure</h2>
+      <figure>
+        <object data="iframe.html"></object>
+        <figcaption>My HTML Clock</figcaption>
+      </figure>
+    </div>
+
+    <div class="ym-hide-content">
+      <h2 class="ym-show-content">meter</h2>
+      <p>The grapefruit pie had a radius of 12cm and a height of
+        2cm.</p>
+      <dl>
+        <dt>Radius: <dd> <meter min=0 max=20 value=12>12cm</meter>
+        <dt>Height: <dd> <meter min=0 max=10 value=2>2cm</meter>
+      </dl>
+    </div>
+
+    <div class="ym-hide-content">
+      <h2 class="ym-show-content">section</h2>
+      <section>
+        <h2>Task Progress</h2>
+        <p>Progress: <progress id="p" max=100><span>0</span>%</progress></p>
+        <script>
+            var progressBar = document.getElementById('p');
+            function updateProgress(newValue) {
+                progressBar.value = newValue;
+                progressBar.getElementsByTagName('span')[0].textContent = newValue;
+            }
+        </script>
+      </section>
+    </div>
+
+    <div class="ym-hide-content">
+      <h2 class="ym-show-content">label</h2>
+      <form>
+        <table>
+          <caption>Example, label's for attribute</caption>
+          <tr>
+            <th><label for="name4">Customer name: </label></th>
+            <td><input name="name" id="name4"></td>
+          </tr>
+        </table>
       </form>
     </div>
 
