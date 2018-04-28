@@ -18,6 +18,70 @@ layout: default
     {% endfor %}
   </ul>
 
+  <ul class="post-list ym-hide-content">
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="post-list">
+
+    <h1>Скрытая форма</h1>
+    <div class="form-wrap register ym-hide-content">
+      <div class="profile"><img src="https://html5book.ru/wp-content/uploads/2016/10/profile-image.png">
+        <h1>Регистрация</h1>
+      </div>
+      <form method="post" action="#">
+        <div>
+          <label for="name3">Имя</label>
+          <input type="text" name="name" id="name3" class="first-name" required>
+        </div>
+        <div class="radio">
+          <span>Пол</span>
+          <label>
+            <input type="radio" name="sex" value="мужской">мужской
+            <div class="radio-control male"></div>
+          </label>
+          <label>
+            <input type="radio" name="sex" value="женский">женский
+            <div class="radio-control female"></div>
+          </label>
+        </div>
+        <div>
+          <label for="email3">E-mail</label>
+          <input type="email" name="email" id="email3" required>
+        </div>
+        <div>
+          <label for="country3">Страна</label>
+          <select name="country" id="country3">
+            <option>Выберите страну проживания</option>
+            <option value="Россия">Россия</option>
+            <option value="Украина">Украина</option>
+            <option value="Беларусь">Беларусь</option>
+          </select>
+          <div class="select-arrow"></div>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+
+    {% for post in site.posts %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+    {% endfor %}
+  </ul>
+
   <br>
 
   <iframe src="/jekyll/update/2016/08/09/welcome-to-jekyll.html" width="650" height="360" align="left">
@@ -83,8 +147,6 @@ layout: default
         });
     };
 </script>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
 
