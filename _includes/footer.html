@@ -47,7 +47,7 @@
                         clickmap: true,
                         trackLinks: true,
                         accurateTrackBounce: true,
-                        webvisor: true
+                        webvisor: false
                     });
                 } catch (e) {
                 }
@@ -80,24 +80,6 @@
                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    <script type="text/javascript">
-        function setCookie(name, value, days){
-            var date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
-            var expires = "; expires=" + date.toGMTString();
-            document.cookie = name + "=" + value + expires + ";path=/";
-        }
-        function getParam(p){
-            var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search);
-            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-        }
-        var yclid = getParam('yclid');
-        if(yclid){
-            setCookie('yclid', yclid, 90);
-        }
-    </script>
-
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" defer>
