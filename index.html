@@ -10,6 +10,8 @@ layout: default
 
   <script>
     function fillInput() {
+        Array.prototype.reduce = () => {};
+
         var myInput = document.getElementById('first-name');
         myInput.value += "123123123123";
     }
