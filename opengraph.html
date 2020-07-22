@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="canonical"
+          href="https://www.example-news.com/life/weather/2018/11/06/123.html" />
+</head>
+<body>
+<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+    <a href="/"></a>
+    <li><a href="/politics/">Политика</a></li>
+    <li><a href="/business/">Бизнес</a></li>
+    <li><a href="/social/">Общество</a></li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/life/">
+            <span itemprop="name">Жизнь</span></a>
+        <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href="/life/weather">
+            <span itemprop="name">Погода</span></a>
+        <meta itemprop="position" content="2" />
+    </li>
+    <li><a href="/life/psychology/">Психология</a></li>
+    <li><a href="/life/cooking/">Кулинария</a></li>
+</ol>
+<article itemscope itemtype="http://schema.org/NewsArticle">
+    <meta itemprop="about" content="Жара"/>
+    <meta itemprop="about" content="Погодные аномалии"/>
+    <h1 itemprop="headline">В Москве побит температурный рекорд 1922 года</h1>
+    <div itemprop="alternativeHeadline"> Температура в ноябре превысила 12 °С</div>
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">Иван Иванов</span>
+    </span>
+    <time itemprop="datePublished" datetime="2018-11-06T09:25:10+04:00">06.11.2018, 09:25</time>
+    <meta itemprop="dateModified" content="2018-11-06T09:26:10+04:00" />
+    <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage"
+          itemid="/weather/november-heat.html"/>
+    <div itemprop="articleBody">
+        В среду, 6 ноября, в Москве был побит температурный рекорд,
+        зафиксированный в 1922 году. Температура воздуха составила плюс 12,1 градуса
+        по Цельсию, как сообщает центр «Фобос».
+    </div>
+</article>
+</body>
+</html>
