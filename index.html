@@ -348,7 +348,7 @@ layout: default
         var hval = 0x811c9dc5;
         var len = str.length;
         for (var i = 0; i < len; i += 1) {
-            hval ^= cahrCodeAt ? str.charCodeAt(i) : str.charPointAt(i);
+            hval ^= cahrCodeAt ? str.charCodeAt(i) : str.codePointAt(i);
             hval +=
                 (hval << 1) +
                 (hval << 4) +
@@ -367,7 +367,7 @@ layout: default
         charPointAtResult.innerText = '';
         for (var i = 0; i < input.value.length; i++) {
           charCodeAtResult.innerText += input.value.charCodeAt(i) + ' ';
-          charPointAtResult.innerText += input.value.charPointAt(i) + ' ';
+          charPointAtResult.innerText += input.value.codePointAt(i) + ' ';
         }
         charCodeAtResult.innerText += '(' + fnv32a(input.value, true) + ')';
         charPointAtResult.innerText += '(' + fnv32a(input.value, false) + ')';
