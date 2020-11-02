@@ -330,4 +330,48 @@ layout: default
       <button type="button" value="Нажми меня" onclick="fillInput()">Нажми меня</button>
     </form>
   </div>
+  
+  
+  <div>
+    <div>
+        Char point at encoding
+        <div id="char-point-at"></div>
+    </div>
+    <div>
+        Char code at encoding
+        <div id="char-code-at"></div>
+    </div>
+    <input id="encoding-input"/>
+    <script>
+      function fnv32a(val, cahrCodeAt) {
+        var str = `${val}`;
+        var hval = 0x811c9dc5;
+        var len = str.length;
+        for (var i = 0; i < len; i += 1) {
+            hval ^= cahrCodeAt ? str.charCodeAt(i) : str.charPointAt(i);
+            hval +=
+                (hval << 1) +
+                (hval << 4) +
+                (hval << 7) +
+                (hval << 8) +
+                (hval << 24);
+        }
+        return hval >>> 0;
+      }
+      var input = document.querySelector('#encoding-input');
+      var charCodeAtResult = document.querySelector('#char-code-at');
+      var charPointAtResult = document.querySelector('#char-point-at');
+
+      input.addEventListener('input', function () {
+        charCodeAtResult.innerText = '';
+        charPointAtResult.innerText = '';
+        for (var i = 0; i < input.value.length; i++) {
+          charCodeAtResult.innerText += input.value.charCodeAt(i) + ' ';
+          charPointAtResult.innerText += input.value.charPointAt(i) + ' ';
+        }
+        charCodeAtResult.innerText += '(' + fnv32a(input.value, true) + ')';
+        charPointAtResult.innerText += '(' + fnv32a(input.value, false) + ')';
+      });
+    </script>
+  </div>
 </div>
