@@ -658,6 +658,49 @@ layout: default
     </script>
   </div>
   <a href="https://t.me/cats_cats">Ссылка на телеграмм</a>
+  <div class="runtime-styles-block">
+        <style id="runtime-styles"></style>
+        <div class="playground">
+            I am dynamically styled block!
+            <button>
+                Style me!
+            </button>
+        </div>
+        <script>
+            const playground = document.querySelector('.runtime-styles-block .playground');
+            const changeStylesButton = playground.querySelector('button');
+            const styleSheet = document.querySelector('#runtime-styles').sheet;
+
+            let styleIndex = 0;
+            const styles = [
+                [
+                    ['.runtime-styles-block .playground', 'background-color: red; font-size: 20px; color: green;'],
+                    ['.runtime-styles-block .playground button', 'background-color: green; color: red;'],
+                ],
+                [
+                    ['.runtime-styles-block .playground', 'baclg round-color: blue; font-size: 30px; color: white;'],
+                    ['.runtime-styles-block .playground button', 'background-color: white; color: blue;'],
+                ],
+                [
+                    ['.runtime-styles-block .playground', 'background-color: purple; font-size: 15px; color: yellow;'],
+                    ['.runtime-styles-block .playground button', 'background-color: yellow; color: purple;'],
+                ],
+            ];
+            const setStyles = () => {
+                const style = styles[styleIndex];
+                styleIndex = (styleIndex + 1) % styles.length;
+                for (let i = 0; i < styleSheet.rules.length; i++) {
+                    styleSheet.removeRule(i);
+                }
+                style.forEach((s) => {
+                    const [selector, style] = s;
+                    styleSheet.addRule(selector, style);
+                });
+            };
+            setStyles();
+            changeStylesButton.addEventListener('click', setStyles);
+        </script>
+    </div>
 <br>
 <h3>Скачать тестовые файлы  можно ниже</h3>
 <a href="/Поздравление_тестировщику.txt" download="">Скачать файл с рус наименованием</a>
