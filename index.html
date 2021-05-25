@@ -689,7 +689,7 @@ layout: default
             const setStyles = () => {
                 const style = styles[styleIndex];
                 styleIndex = (styleIndex + 1) % styles.length;
-                for (let i = 0; i < styleSheet.rules.length; i++) {
+                for (let i = styleSheet.rules.length; i >= 0; i--) {
                     styleSheet.removeRule(i);
                 }
                 style.forEach((s) => {
