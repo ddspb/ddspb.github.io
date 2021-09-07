@@ -24,8 +24,33 @@
 <body>
   
   <h1> Page for testing sendbeacon in webview </h1>
-<a href="metricatracked://"> android deeplink</a>
-<a href="appmetricasample://example.host/appmetrica/open/url?referrer=appmetrica_tracking_id%3D242551232483314921%26reattribution%3D1"> ios deeplink</a>  
+  
+<table>
+  <tr>
+        <a href="metricatracked://"> android deeplink w/o params</a>
+
+        <a href="metricatracked://example.host/appmetrica/open/url?reattribution%3D1"> 
+        android deeplink w param reatribution</a>
+
+        <a href="metricatracked://example.host/appmetrica/open/url?yclid%3D111"> 
+        android deeplink w param yclid </a>
+  
+        <a href="metricatracked://example.host/appmetrica/open/url?referrer=appmetrica_tracking_id%3D242551232483314921%26reattribution%3D1&yclid%3D111"> 
+        android deeplink w param yclid reatribution referrer</a>
+        </tr>
+        <tr>
+        <a href="appmetricasample://"> ios deeplink w/o params</a>  
+  
+        <a href="metricatracked://example.host/appmetrica/open/url?reattribution%3D1"> 
+         ios deeplink w param reatribution</a>
+
+        <a href="metricatracked://example.host/appmetrica/open/url?yclid%3D111"> 
+        ios deeplink w param yclid </a>
+  
+        <a href="metricatracked://example.host/appmetrica/open/url?referrer=appmetrica_tracking_id%3D242551232483314921%26reattribution%3D1&yclid%3D111"> 
+        ios deeplink w param yclid reatribution referrer</a>
+  </tr>
+</table>
   
 
 <script type="text/javascript">
